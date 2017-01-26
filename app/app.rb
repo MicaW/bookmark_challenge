@@ -1,3 +1,5 @@
+ENV["RACK_ENV"] ||= "development"
+
 require 'sinatra/base'
 require 'data_mapper'
 require 'dm-postgres-adapter'
@@ -10,13 +12,22 @@ class BookmarkManager < Sinatra::Base
      redirect '/links'
    end
 
+  post '/links' do
+    link = Link.create(url: params[:url], title: params[:title])
+    redirect '/links'
+  end
+
   get '/links' do
-    #use DataMapper to get all the Link objects in the database.
     @links = Link.all
     erb:'links/index'
   end
 
-# start the server if ruby file executed directly
+  get '/links/new' do
+    erb:'links/new'
+  end
+
 run! if app_file == $0
+
+attr_accessor :links
 
 end
