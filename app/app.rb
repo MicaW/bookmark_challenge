@@ -13,7 +13,7 @@ class BookmarkManager < Sinatra::Base
   get '/links' do
     #use DataMapper to get all the Link objects in the database.
     @links = Link.all
-    erb(:'links/index')
+    erb:'links/index'
   end
 
 # start the server if ruby file executed directly
