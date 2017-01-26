@@ -6,13 +6,15 @@ require_relative 'models/link'
 class BookmarkManager < Sinatra::Base
   DataMapper::Logger.new($stdout, :debug)
 
+  get '/' do
+     redirect '/links'
+   end
+
   get '/links' do
-  #use DataMapper to get all the Link objects in the database.
-  @links = Link.all
-  erb(:'link/index')
+    #use DataMapper to get all the Link objects in the database.
+    @links = Link.all
+    erb(:'links/index')
   end
-
-
 
 # start the server if ruby file executed directly
 run! if app_file == $0
