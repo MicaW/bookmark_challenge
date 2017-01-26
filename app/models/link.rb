@@ -1,4 +1,5 @@
 require 'data_mapper'
+require 'dm-postgres-adapter'
 
 class Link
 
@@ -8,7 +9,8 @@ class Link
   property :title, String
   property :url, String
 
-  end
+
+end
 
 DataMapper.setup(:default, "postgres://localhost/bookmark_manager_test")
 DataMapper.finalize

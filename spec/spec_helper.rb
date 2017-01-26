@@ -17,7 +17,16 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
+require 'capybara'
 require 'capybara/rspec'
+require 'rspec'
+require './app/models/link'
+require './app/app'
+
+require File.join(File.dirname(__FILE__), '..', './app/app.rb')
+
+
+Capybara.app = BookmarkManager
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
