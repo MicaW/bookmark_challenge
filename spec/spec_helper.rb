@@ -23,8 +23,8 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require './app/app'
-require './app/models/link'
 require 'database_cleaner'
+require_relative './features/web_helper'
 
 require File.join(File.dirname(__FILE__), '..', './app/app.rb')
 

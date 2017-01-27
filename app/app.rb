@@ -20,9 +20,18 @@ class BookmarkManager < Sinatra::Base
 
   get '/links' do
     @links = Link.all
-    p @links.tags
     erb:'links/index'
   end
+
+  post '/links/filter' do
+    redirect "links/#{params[:filter]}"
+  end
+
+  get '/links/:filter' do
+    "This might work"
+  end
+
+
 
   get '/links/new' do
     erb:'links/new'

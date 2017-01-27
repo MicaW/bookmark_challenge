@@ -1,6 +1,11 @@
 <h1>Saved Bookmarks</h1>
 
-<a href="links/new">Add bookmark</a>
+<a href="links/new">Add bookmark</a><br />
+<br /><form name ='filter' action='/links/filter' method='post'>
+  <label for='filter'>
+    Filter by tag:<br />
+<input type="text" name="filter">
+<button type="submit">Filter</button>
 
 <ul id='links'>
   <% @links.each do |link| %>
