@@ -1,5 +1,6 @@
 feature 'filters by tag' do
   scenario 'filters my links by tag' do
+    sign_in
     create_link_with_tag
     create_link_with_different_tag
     visit "/links"

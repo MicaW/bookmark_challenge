@@ -3,7 +3,7 @@ require 'spec_helper'
 feature 'Adding links' do
 
   scenario 'To be able add a new bookmark with title and url' do
-      visit('/links')
+      sign_in
       click_link('Add bookmark')
         fill_in('title', :with => 'Facebook')
         fill_in('url', :with => 'www.facebook.com')

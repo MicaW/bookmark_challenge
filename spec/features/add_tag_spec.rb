@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature 'Adding tag to link' do
   scenario 'When creating a link, add a tag' do
-    visit('/links')
+    sign_in
     click_link('Add bookmark')
     fill_in('title', :with => 'Facebook')
     fill_in('url', :with => 'www.facebook.com')
@@ -11,7 +11,7 @@ feature 'Adding tag to link' do
     expect(page).to have_content('Social')
 end
   scenario "add multiple tage to link" do
-    visit('/links')
+    sign_in
     click_link('Add bookmark')
     fill_in('title', :with => 'Facebook')
     fill_in('url', :with => 'www.facebook.com')
