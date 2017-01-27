@@ -15,3 +15,6 @@ namespace :db do
     puts "Auto-migrate complete (data was lost)"
   end
 end
+
+
+#to run in command line: rake dm:auto_upgrade!
