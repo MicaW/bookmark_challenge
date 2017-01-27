@@ -4,6 +4,6 @@ class Tag
 
   property :id, Serial
   property :title, String
-  #has n, :links, :through => Resource
+  has n, :links, :through => Resource
 
 end

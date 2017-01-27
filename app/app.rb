@@ -23,14 +23,17 @@ class BookmarkManager < Sinatra::Base
     erb:'links/index'
   end
 
-  post '/links/filter' do
-    redirect "links/#{params[:filter]}"
+  post '/tag/filter' do
+    redirect "tag/#{params[:filter]}"
   end
 
-  get '/links/:filter' do
+  get '/tag/:filter' do
     "This might work"
+    @filter = params[:filter]
+    tag = Tag.all(title: params[:filter])
+    @links = tag ? tag.links : []
+    erb:'links/index'
   end
-
 
 
   get '/links/new' do
