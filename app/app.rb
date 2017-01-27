@@ -26,7 +26,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/tag/filter' do
-    redirect "tag/#{params[:filter]}"
+    redirect "tag/#{params[:filter].downcase}"
   end
 
   get '/tag/:filter' do
