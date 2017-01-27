@@ -1,5 +1,4 @@
 require 'spec_helper'
-require './app/models/link'
 
 feature 'Viewing Links' do
 

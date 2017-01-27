@@ -4,6 +4,7 @@ require 'sinatra/base'
 require 'data_mapper'
 require 'dm-postgres-adapter'
 require_relative 'models/link'
+require_relative 'models/tag'
 
 class BookmarkManager < Sinatra::Base
   DataMapper::Logger.new($stdout, :debug)
@@ -14,11 +15,15 @@ class BookmarkManager < Sinatra::Base
 
   post '/links' do
     link = Link.create(url: params[:url], title: params[:title])
+    tag = Tag.first_or_create(title: params[:tag])
+    link.tags << tag
+    link.save
     redirect '/links'
   end
 
   get '/links' do
     @links = Link.all
+    p @links.tags
     erb:'links/index'
   end
 

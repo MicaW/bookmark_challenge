@@ -7,6 +7,7 @@
     <li>
       Title: <%= link.title %> </br>
       URL:   <%= link.url   %> </br>
+      Tags:   <%= link.tags.map(&:title) %> </br>
       <br />
     </li>
   <% end %>

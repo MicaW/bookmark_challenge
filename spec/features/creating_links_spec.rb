@@ -1,7 +1,4 @@
 require 'spec_helper'
-require './app/models/link'
-require 'database_cleaner'
-require './app/app.rb'
 
 feature 'Adding links' do
 
