@@ -6,4 +6,4 @@ class Tag
   property :title, String
   #has n, :links, :through => Resource
 
-  end
+end
